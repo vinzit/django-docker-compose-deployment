@@ -1,2 +1,3 @@
-Django>=3.2.3,<=3.3
-psycopg2
+Django==3.2.4
+psycopg2-binary
+uWSGI>=2.0.19.1,<2.1
