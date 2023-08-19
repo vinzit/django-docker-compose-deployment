@@ -13,19 +13,20 @@ services:
       - 8000:8000
     volumes:
       - ./app:/app
-      - ./data/web:/vol/web
+      #- ./data/web:/vol/web
     environment:
       - SECRET_KEY=devsecretkey
       - DEBUG=1
       - DB_HOST=db
       - DB_NAME=devdb
       - DB_USER=devuser
-      - DB_PASSWORD=changeme
+      - DB_PASS=changeme
     depends_on:
       - db
 
   db:
     image: postgres:13-alpine
+    restart: always
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
